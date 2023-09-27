@@ -17,7 +17,8 @@ This repository contains utilities for:
 - openai
 - argparse
 - python-dotenv
-- Ffmpeg
+- ffmpeg
+- openai-whisper
 
 ## Setup
 
@@ -52,18 +53,24 @@ python download_yt_to_mp3.py --youtube-url "YOUTUBE_URL" --output-path "OUTPUT_P
 ### Transcribe an Audio File
 
 ```bash
-python transcribe.py --audio-path "AUDIO_FILE_PATH" --output-path "OUTPUT_FILE_PATH.txt" [--language "LANGUAGE"]
+python transcribe.py --audio-path "AUDIO_FILE_PATH" --output-path "OUTPUT_FILE_PATH.txt" [--language "LANGUAGE"] [---use-openai-api] [--local-whisper-model "MODEL"]
 ```
 
 - `AUDIO_FILE_PATH`: The path to the audio file you want to transcribe.
 - `OUTPUT_FILE_PATH.txt`: The output transcript text file.
-- `LANGUAGE`: Optional. The language to transcribe to. Default is English (`en`).
+- `LANGUAGE`: Optional. The language to transcribe to. Default is English (`en`). Auto-detected if using open-source whisper.
+- `MODEL`: Optional. Which open source whisper model to use. Default is Base (`base`).
+
+Default is to use the open-source whisper model. If you want to use the OpenAI API, you must specify the `--use-openai-api` flag.
 
 ### Translate an Audio File to English
 
 ```bash
-python translate.py --audio-path "AUDIO_FILE_PATH" --output-path "OUTPUT_FILE_PATH.txt"
+python translate.py --audio-path "AUDIO_FILE_PATH" --output-path "OUTPUT_FILE_PATH.txt" [--use-open-source] [---use-openai-api] ["MODEL"]
 ```
 
 - `AUDIO_FILE_PATH`: The path to the audio file you want to translate and transcribe.
 - `OUTPUT_FILE_PATH.txt`: The output transcript text file in English.
+- `MODEL`: Optional. Which open source whisper model to use. Default is Base (`base`).
+
+Default is to use the open-source whisper model. If you want to use the OpenAI API, you must specify the `--use-openai-api` flag.

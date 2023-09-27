@@ -1,3 +1,4 @@
 openai
 python-dotenv
+openai-whisper
 git+https://github.com/ytdl-org/youtube-dl.git 
