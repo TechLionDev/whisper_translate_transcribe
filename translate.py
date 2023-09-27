@@ -12,6 +12,7 @@ def translate_via_local_whisper(audio_file_path, output_file_path, whisper_model
         result = model.transcribe(
             audio=audio_file_path,
             task="translate",
+            language="en",
         )
         f.write(format_transcript(result['text']))
 
