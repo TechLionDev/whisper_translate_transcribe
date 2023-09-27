@@ -17,7 +17,7 @@ This repository contains utilities for:
 - openai
 - argparse
 - python-dotenv
-- Ffempeg
+- Ffmpeg
 
 ## Setup
 
