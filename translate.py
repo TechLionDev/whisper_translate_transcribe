@@ -14,7 +14,7 @@ def translate_to_english(audio_file_path, output_file_path):
                 file=audio_file,
                 language="en"
             )
-            f.write(format_transcript(response))
+            f.write(format_transcript(response.text))
 
 
 def parse():
